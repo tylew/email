@@ -77,7 +77,8 @@ class Email {
     outToServer.println("DATA");
     System.out.println("FROM CLIENT: " + "DATA");
     System.out.println("FROM SERVER: " + inFromServer.readLine());
-
+    System.out.println("FROM SERVER: " + inFromServer.readLine());
+    
     outToServer.println(data);
     System.out.println("FROM CLIENT: " + data);
     System.out.println("FROM SERVER: " + inFromServer.readLine());
