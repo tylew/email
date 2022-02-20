@@ -51,7 +51,7 @@ class Email {
     Socket clientSocket = null;
 
     try {
-      System.out.println("Message recieved - Attempting connection to smtp.chapman.edu using port 25...");
+      System.out.println("Recieved. Attempting connection to smtp.chapman.edu using port 25...");
       clientSocket = new Socket("smtp.chapman.edu", 25);
     } catch (Exception e) {
       System.out.println("\nError: Failed to open socket connection\n");
@@ -60,7 +60,8 @@ class Email {
 
     //Send Data
     PrintWriter outToServer = new PrintWriter(clientSocket.getOutputStream(), true);
-    BufferedReader inFromServer =  new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+    BufferedReader inFromServer =  new BufferedReader(
+     new InputStreamReader(clientSocket.getInputStream()));
 
     outToServer.println("HELO icd.chapman.edu");
     System.out.println("FROM CLIENT: " + "HELO icd.chapman.edu");
