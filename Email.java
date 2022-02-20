@@ -63,21 +63,27 @@ class Email {
     BufferedReader inFromServer =  new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
     outToServer.println("HELO icd.chapman.edu");
+    System.out.println("FROM CLIENT: " + "HELO icd.chapman.edu");
     System.out.println("FROM SERVER: " + inFromServer.readLine());
 
     outToServer.println("MAIL FROM: " + send_user);
+    System.out.println("FROM CLIENT: " + "MAIL FROM: " + send_user);
     System.out.println("FROM SERVER: " + inFromServer.readLine());
 
     outToServer.println("RCPT TO: " + rcpt_user);
+    System.out.println("FROM CLIENT: " + "RCPT TO: " + rcpt_user);
     System.out.println("FROM SERVER: " + inFromServer.readLine());
 
     outToServer.println("DATA");
+    System.out.println("FROM CLIENT: " + "DATA");
     System.out.println("FROM SERVER: " + inFromServer.readLine());
 
     outToServer.println(data);
+    System.out.println("FROM CLIENT: " + data);
     System.out.println("FROM SERVER: " + inFromServer.readLine());
 
     outToServer.println("QUIT");
+    System.out.println("FROM CLIENT: " + "QUIT");
     System.out.println("FROM SERVER: " + inFromServer.readLine());
       
     clientSocket.close();
