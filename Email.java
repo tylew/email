@@ -29,30 +29,32 @@ class Email {
     System.out.print("Type the sender name: ");
     final String from = inFromUser.readLine();
 
-    System.out.print("Type the sender name: ");
+    System.out.print("Type the recipient name: ");
     final String to = inFromUser.readLine();
 
     System.out.print("Type the email subject: ");
     final String subject = inFromUser.readLine();
 
-    String data = "FROM: " + from + "\nTO: " + to + "\nSUBJECT: " + subject;
-    String ph = "";
-    System.out.print("Type email body, end message with '.' on final line:\n\n");
-    ph = inFromUser.readLine();
+    String data = "FROM: " + from + "\nTO: " + to + "\nSUBJECT: " + subject + "\n";
+    String line = "";
+    System.out.print("Type email body, end message with '.' on final line:\n");
+    line = inFromUser.readLine();
 
-    while(!ph.equals(".")) {
-      data += ph + "\n";
-      ph = inFromUser.readLine();
+    while (!(line.equals("."))) {
+      data += line + "\n";
+      line = inFromUser.readLine();
     }
 
     data += ".";
+
     // Open socket and prepare to send
     Socket clientSocket = null;
 
     try {
+      System.out.println("Message recieved - Attempting connection to smtp.chapman.edu using port 25...");
       clientSocket = new Socket("smtp.chapman.edu", 25);
     } catch (Exception e) {
-      System.out.println("Failed to open socket connection");
+      System.out.println("\nError: Failed to open socket connection\n");
       System.exit(0);
     }
 
