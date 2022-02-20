@@ -61,7 +61,8 @@ class Email {
     //Send Data
     PrintWriter outToServer = new PrintWriter(clientSocket.getOutputStream(), true);
     BufferedReader inFromServer =  new BufferedReader(
-     new InputStreamReader(clientSocket.getInputStream()));
+     new InputStreamReader(clientSocket.getInputStream())
+    );
 
     outToServer.println("HELO icd.chapman.edu");
     System.out.println("FROM CLIENT: " + "HELO icd.chapman.edu");
