@@ -13,7 +13,6 @@ This java based program is intended to explore the inner workings of an SMTP cli
 ## Build Insructions
 
 * Follow terminal prompts to send email message utiliaing Chapman Univ SMTP server
-*
 * Alternatively utilize an input file follwing same format of example 'email.input' file
 
 ## Execution Instructions
